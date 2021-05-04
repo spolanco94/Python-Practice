@@ -7,7 +7,7 @@
 pizzas = ["margherita", "pepperoni", "sausage", "bianca"]
 friend_pizzas = pizzas[:]
 
-pizzas.append("chicken and bacon")
+pizzas.append("bacon")
 friend_pizzas.append("veggie")
 
 print("My favorite pizza's are:")
