@@ -8,5 +8,5 @@ terms = {
     "dictionary" : "data type storing various key-value pairs",
 }
 
-for val in terms:
+for val in terms.keys():
     print(f"{val.title()}: {terms[val].capitalize()}\n")
