@@ -6,7 +6,7 @@ farjan_profile = {
     "age" : 26,
     "city" : "queens",
 }
-for val in farjan_profile:
+for val in farjan_profile.keys():
     if isinstance(farjan_profile[val], int):
         print(f"{val} : {farjan_profile[val]}")
     else:
