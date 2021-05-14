@@ -1,7 +1,5 @@
 # Expand the code from 8-9 to move each message to a new list called 
 # 'sent_messages'. Print both lists to make sure everything moved correctly.
-# Make a list of a series of text messages, and a function called 
-# 'show_messages()' to output them.
 
 def show_messages(messages, sent_messages):
     """Displays a series of text messages"""
