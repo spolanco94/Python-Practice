@@ -11,8 +11,8 @@ class Restaurant:
 
     def describe_restaurant(self):
         """Print out the name and cuisine of the restaurant."""
-        print(f"Welcome to {self.name}!")
-        print(f"Here we serve authentic {self.cuisine} cuisine.")
+        print(f"Welcome to {self.name.title()}!")
+        print(f"Here we serve authentic {self.cuisine.title()} cuisine.\n")
 
     def open_restaurant(self):
-        print(f"{self.name} is now open!")
+        print(f"{self.name.title()} is now open!")
