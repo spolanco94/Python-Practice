@@ -8,6 +8,7 @@ class Restaurant:
         """Initialize name and cuisine attributes."""
         self.name = name
         self.cuisine = cuisine
+        self.number_served = 0
 
     def describe_restaurant(self):
         """Print out the name and cuisine of the restaurant."""
@@ -16,3 +17,9 @@ class Restaurant:
 
     def open_restaurant(self):
         print(f"{self.name.title()} is now open!")
+
+    def set_number_served(self, customers):
+        self.number_served = customers
+
+    def increment_number_served(self, number_served):
+        self.number_served += number_served
