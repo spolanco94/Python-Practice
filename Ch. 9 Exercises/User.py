@@ -13,6 +13,7 @@ class User:
         self.birthday = birthday
         self.gender = gender
         self.city = city
+        self.login_attempts = 0
 
     def describe_user(self):
         """Prints a summary of the user's name, birthday, gender, and city."""
@@ -24,3 +25,11 @@ class User:
     def greet_user(self):
         """Prints a personalized greeting to the user."""
         print(f"Welcome, {self.f_name.title()}. Glad to see you here!\n")
+
+    def increment_login_attempts(self):
+        """Increment the number of times a user has tried to login by 1."""
+        self.login_attempts += 1
+
+    def reset_login_attempts(self):
+        """Resets the login attempt count back to 0 upon successful login."""
+        self.login_attempts = 0
