@@ -5,7 +5,7 @@ class Restaurant:
     """A simple restaurant class."""
 
     def __init__(self, name, cuisine) -> None:
-        """Initialize name and cuisine attributes."""
+        """Initialize name, cuisine and customers served attributes."""
         self.name = name
         self.cuisine = cuisine
         self.number_served = 0
@@ -19,7 +19,9 @@ class Restaurant:
         print(f"{self.name.title()} is now open!")
 
     def set_number_served(self, customers):
+        """Change the value of number_served."""
         self.number_served = customers
 
     def increment_number_served(self, number_served):
+        """Increment the value of number_served."""
         self.number_served += number_served
