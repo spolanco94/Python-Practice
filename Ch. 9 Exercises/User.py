@@ -24,7 +24,8 @@ class User:
 
     def greet_user(self):
         """Prints a personalized greeting to the user."""
-        print(f"Welcome, {self.f_name.title()}. Glad to see you here!\n")
+        print(f"Welcome, {self.f_name.title()} {self.l_name.title()}. Glad to "
+               "see you here!")
 
     def increment_login_attempts(self):
         """Increment the number of times a user has tried to login by 1."""
@@ -33,3 +34,29 @@ class User:
     def reset_login_attempts(self):
         """Resets the login attempt count back to 0 upon successful login."""
         self.login_attempts = 0
+
+
+class Admin(User):
+    """A subset of the User class that represents an Administrator user."""
+
+    def __init__(self, f_name, l_name, birthday, 
+                 gender, city, privileges) -> None:
+        super().__init__(f_name, l_name, birthday, gender, city)
+        self.privileges = privileges
+
+    def show_privileges(self):
+        """Displays Administrators full privileges."""
+        read = []
+        curr = ""
+        finished = False
+        self.privileges.reverse()
+        
+        self.greet_user()
+        print(f"Your full administrator privileges are as follows:")
+        
+        while not finished:
+            curr = self.privileges.pop()
+            print(f"\t> {curr.title()}")
+            read.append(curr)
+            if(self.privileges == []):
+                finished = True
