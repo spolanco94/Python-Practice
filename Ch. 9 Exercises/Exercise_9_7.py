@@ -6,4 +6,5 @@ from User import Admin
 hal = Admin("hal", "9000", "1/12/1992", "ai", "urbana, illinois", 
             ["can delete posts", "can create posts", "can speak", "can pilot", 
             "can play chess"])
-hal.show_privileges()
+hal.greet_user()
+hal.privileges.show_privileges()
