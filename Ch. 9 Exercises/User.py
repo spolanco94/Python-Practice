@@ -35,13 +35,10 @@ class User:
         """Resets the login attempt count back to 0 upon successful login."""
         self.login_attempts = 0
 
+class Privileges:
+    """A class representing a list of user privileges."""
 
-class Admin(User):
-    """A subset of the User class that represents an Administrator user."""
-
-    def __init__(self, f_name, l_name, birthday, 
-                 gender, city, privileges) -> None:
-        super().__init__(f_name, l_name, birthday, gender, city)
+    def __init__(self, privileges=["can monitor", "can pilot"]) -> None:
         self.privileges = privileges
 
     def show_privileges(self):
@@ -51,7 +48,6 @@ class Admin(User):
         finished = False
         self.privileges.reverse()
         
-        self.greet_user()
         print(f"Your full administrator privileges are as follows:")
         
         while not finished:
@@ -60,3 +56,11 @@ class Admin(User):
             read.append(curr)
             if(self.privileges == []):
                 finished = True
+
+class Admin(User):
+    """A subset of the User class that represents an Administrator user."""
+
+    def __init__(self, f_name, l_name, birthday, 
+                 gender, city, privileges) -> None:
+        super().__init__(f_name, l_name, birthday, gender, city)
+        self.privileges = Privileges(privileges)
