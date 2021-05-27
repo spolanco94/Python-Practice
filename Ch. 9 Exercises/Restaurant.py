@@ -7,7 +7,7 @@ class Restaurant:
     """A simple restaurant class."""
 
     def __init__(self, name, cuisine) -> None:
-        """Initialize name, cuisine and customers served 4attributes."""
+        """Initialize name, cuisine and customers served attributes."""
         self.name = name
         self.cuisine = cuisine
         self.number_served = 0
