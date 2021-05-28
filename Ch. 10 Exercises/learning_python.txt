@@ -1,0 +1,4 @@
+In Python you can create lists, tuples and dictionaries to manage data.
+In Python you can use loops to automate repetitve code for you.
+In Python you can create classes to represent real world objects.
+In Python you can define function modules to keep code organized and efficient.
