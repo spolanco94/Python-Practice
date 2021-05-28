@@ -16,7 +16,6 @@ while 10 <= len(pool) < 15:
     if l not in pool:
         pool.append(l)
 
-print(pool)
 win_set = []
 while len(win_set) < 4:
     m = random.choice(pool)
