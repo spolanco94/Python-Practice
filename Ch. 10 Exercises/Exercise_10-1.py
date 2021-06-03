@@ -3,7 +3,7 @@
 # and prints what you wrote three times; once by reading the entire file, once 
 # by looping over the file object, and once by storing the lines in a list and 
 # working with it outside the block.
-filepath = 'Ch. 10 Exercises\learning_python.txt'
+filepath = 'learning_python.txt'
 with open(filepath) as file_object:
     contents = file_object.read()
 
