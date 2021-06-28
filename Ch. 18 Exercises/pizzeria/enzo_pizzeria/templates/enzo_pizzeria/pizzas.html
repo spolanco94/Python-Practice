@@ -1,0 +1,19 @@
+{% extends "enzo_pizzeria/base.html"%}
+
+{% block content %}
+
+  <div>
+    <h3>Pizza's</h3>
+
+    <ul>
+      {% for pizza in pizzas %}
+        <li>
+          <a href="{% url 'enzo_pizzeria:pizza' pizza.name %}">{{ pizza }}</a>
+        </li>
+      {% empty %}
+        <p>There are currently no pizza's available.</p>
+      {% endfor %}
+    </ul>
+  </div>
+
+{% endblock content %}
