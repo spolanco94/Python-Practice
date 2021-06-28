@@ -14,7 +14,7 @@ def pizzas(request):
 
 def pizza(request, pizza_name):
     """Display's details about the toppings of a specific pizza."""
-    pizza = Pizza.objects.get(pizza_name)
-    toppings = pizzas.topping_set.order_by('name')
+    pizza = Pizza.objects.get(name=pizza_name)
+    toppings = pizza.topping_set.order_by('name')
     context = {'pizza': pizza, 'toppings': toppings}
     return render(request, 'enzo_pizzeria/pizza.html', context)
