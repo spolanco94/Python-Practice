@@ -14,4 +14,6 @@ urlpatterns = [
     path('topics/<int:topic_id>/', views.topic, name='topic'),
     # Form page for creating a new topic
     path('new_topic/', views.new_topic, name='new_topic'),
+    # Form page to creating a new entry for a specific topic
+    path('new_entry/<int:topic_id>/', views.new_entry, name='new_entry'),
 ]
