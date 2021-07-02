@@ -1,6 +1,6 @@
 from django.shortcuts import render, redirect
 
-from .models import Topic
+from .models import Topic, Entry
 from .forms import TopicForm, EntryForm
 
 def index(request):
@@ -23,7 +23,7 @@ def topic(request, topic_id):
 def new_topic(request):
     """Create a new topic."""
     
-    if(request.method != 'POST'):
+    if request.method != 'POST':
         # No data submitted, create a blank form
         form = TopicForm()
     else:
@@ -42,7 +42,7 @@ def new_entry(request, topic_id):
 
     topic = Topic.objects.get(id=topic_id)
 
-    if(request.method != "POST"):
+    if request.method != "POST":
         # No data submitted, create a blank form
         form = EntryForm()
     else:
@@ -56,4 +56,23 @@ def new_entry(request, topic_id):
 
     # Display a blank or invalid form
     context = {'topic': topic, 'form': form}
+    return render(request, 'learning_logs/new_entry.html', context)
+
+def edit_entry(request, entry_id):
+    """Edit an existing entry for a topic."""
+    entry = Entry.objects.get(id=entry_id)
+    topic = entry.topic
+
+    if request.method != "POST":
+        # No data submitted, generate a form pre-filled with the existing entry
+        form = EntryForm(instance=entry)
+    else:
+        # Post data submitted, updating existing entry with any new information
+        form = EntryForm(instance=entry, data=request.POST)
+        if form.is_valid():
+            form.save(commit=False)
+            return redirect('learning_logs:topic', topic_id=topic.id)
+
+    # Display a blank or invalid form
+    context = {'entry': entry, 'topic': topic, 'form': form}
     return render(request, 'learning_logs/new_entry.html', context)
