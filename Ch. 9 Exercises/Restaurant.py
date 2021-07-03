@@ -1,5 +1,5 @@
 # Create a 'Restaurant' class, including a 'restaurant_name' and 'cuisine_type'
-# attribute as well as two methods, 'describe_restaurant' to print the name and 
+# attribute as well as two methods, 'describe_restaurant' to print the name and
 # cuisine type, and 'open_restaurant' to print that the restaurant is open.
 import string
 
@@ -48,7 +48,7 @@ class IceCreamStand(Restaurant):
 
         print(f"Welcome to {string.capwords(self.name)}.\nCurrently, the "
                "flavors we have available are:")
-        
+
         while not finished:
             curr = self.flavors.pop()
             print(f"\t> {curr.title()}")

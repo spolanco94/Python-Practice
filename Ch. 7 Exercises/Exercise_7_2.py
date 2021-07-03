@@ -3,7 +3,7 @@
 party_size = input("How big of a party will be dining tonight? ")
 party_size = int(party_size)
 
-if party_size > 8 :
+if party_size > 8:
     print(f"For a party of {party_size}, there will be a 30 minute waiting "
     "period.")
     response = input("Will that be alright? (y/n) ")
@@ -20,6 +20,6 @@ if party_size > 8 :
         print("Thank you for your patience. We will notify you once your table "
         "is ready.")
     elif response.lower() == "n":
-        print("We understand and hope to service you another time.") 
-else: 
+        print("We understand and hope to service you another time.")
+else:
     print("Very well, you may follow us to your table now.")

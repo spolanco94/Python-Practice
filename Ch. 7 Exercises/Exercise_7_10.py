@@ -1,4 +1,4 @@
-# Write a polling program asking users about their dream vacation and print the 
+# Write a polling program asking users about their dream vacation and print the
 # results
 
 print("Welcome! We would like to know what some of the most popular vacation "

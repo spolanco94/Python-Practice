@@ -1,4 +1,4 @@
-# Write a while loop that asks people why the love programming. Everytime they 
+# Write a while loop that asks people why the love programming. Everytime they
 # enter a response, write it to a file that will store all of them.
 filename = 'programming_poll.txt'
 

@@ -1,5 +1,5 @@
-##### Make a dictionary called cities, and store info about the county, 
-##### population, and one fun fact. Loop through and print all info about each 
+##### Make a dictionary called cities, and store info about the county,
+##### population, and one fun fact. Loop through and print all info about each
 ##### city
 cities = {
     "fukuoka" : {

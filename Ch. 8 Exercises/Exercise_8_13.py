@@ -1,5 +1,5 @@
-# Using the example code from 'user_profile.py', build a profile for yourself 
-# by calling 'build_profile()' using your first and last name, and 3 other 
+# Using the example code from 'user_profile.py', build a profile for yourself
+# by calling 'build_profile()' using your first and last name, and 3 other
 # key-value pairs that describe you
 
 def build_profile(first, last, **user_info):
@@ -9,7 +9,7 @@ def build_profile(first, last, **user_info):
     return user_info
 
 user_profile = build_profile("steven", "polanco",
-                            location = "new york", 
+                            location = "new york",
                             field = "design",
                             hobby = "gaming")
 

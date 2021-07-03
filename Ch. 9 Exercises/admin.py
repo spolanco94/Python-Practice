@@ -12,9 +12,9 @@ class Privileges:
         curr = ""
         finished = False
         self.privileges.reverse()
-        
+
         print(f"Your full administrator privileges are as follows:")
-        
+
         while not finished:
             curr = self.privileges.pop()
             print(f"\t> {curr.title()}")
@@ -25,7 +25,7 @@ class Privileges:
 class Admin(User):
     """A subset of the User class that represents an Administrator user."""
 
-    def __init__(self, f_name, l_name, birthday, 
+    def __init__(self, f_name, l_name, birthday,
                  gender, city, privileges) -> None:
         super().__init__(f_name, l_name, birthday, gender, city)
         self.privileges = Privileges(privileges)

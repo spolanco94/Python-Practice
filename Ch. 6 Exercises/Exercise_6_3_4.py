@@ -1,4 +1,4 @@
-##### Store 5 programming related terms in a dictionary with their definitions 
+##### Store 5 programming related terms in a dictionary with their definitions
 ##### as values, then print each one neatly formatted
 terms = {
     "conditionals" : "expressions used to handle decisions made by program",

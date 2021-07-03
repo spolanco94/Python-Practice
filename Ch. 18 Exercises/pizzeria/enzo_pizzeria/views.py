@@ -9,7 +9,7 @@ def index(request):
 def pizzas(request):
     """Display page listing pizzas."""
     pizzas = Pizza.objects.order_by('name')
-    context = {'pizzas' : pizzas }
+    context = {'pizzas' : pizzas}
     return render(request, 'enzo_pizzeria/pizzas.html', context)
 
 def pizza(request, pizza_name):

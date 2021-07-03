@@ -1,4 +1,4 @@
-##### Use a dictionary to store information about a person 
+##### Use a dictionary to store information about a person
 
 farjan_profile = {
     "first_name" : "farjan",

@@ -12,7 +12,7 @@ while sandwich_orders:
         print(f"Now making {current_sandwich.upper()}... Done!")
     else:
         print(f"Now making {current_sandwich}... Done!")
-    
+
     finished_sandwiches.append(current_sandwich)
 
 print("\nHere are all the sandwiches that have been completed: ")

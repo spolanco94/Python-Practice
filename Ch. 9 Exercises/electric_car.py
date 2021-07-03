@@ -54,7 +54,7 @@ class Battery:
         # Check battery size, if not 100 then set to 100
         if self.battery_size == 100:
             pass
-        elif self.battery_size < 100: 
+        elif self.battery_size < 100:
             self.battery_size = 100
 
 class ElectricCar(Car):
