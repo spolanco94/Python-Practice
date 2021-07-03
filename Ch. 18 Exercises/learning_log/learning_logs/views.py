@@ -64,15 +64,15 @@ def edit_entry(request, entry_id):
     topic = entry.topic
 
     if request.method != "POST":
-        # No data submitted, generate a form pre-filled with the existing entry
+        # Generate a form pre-filled with the existing entry
         form = EntryForm(instance=entry)
     else:
         # Post data submitted, updating existing entry with any new information
         form = EntryForm(instance=entry, data=request.POST)
         if form.is_valid():
-            form.save(commit=False)
+            form.save()
             return redirect('learning_logs:topic', topic_id=topic.id)
 
     # Display a blank or invalid form
     context = {'entry': entry, 'topic': topic, 'form': form}
-    return render(request, 'learning_logs/new_entry.html', context)
+    return render(request, 'learning_logs/edit_entry.html', context)
