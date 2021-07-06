@@ -10,3 +10,4 @@ class BlogPost(models.Model):
     def __str__(self) -> str:
         """Return a string representation of the model."""
         return f"{self.text[:150]}..."
+        
