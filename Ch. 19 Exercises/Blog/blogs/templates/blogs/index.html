@@ -1,0 +1,16 @@
+{% extends "blogs/base.html" %}
+
+{% block content %}
+  <br>
+  <h3>Blogs:</h3>
+  <ul>
+    {% for blog in blogs %}
+    <li>
+      <h4>{{ blog.title }}</h4>
+      <p>{{ blog.text }}</p>
+    </li>
+    {% empty %}
+    <p>Sorry, there have been no blog posts added yet. </p>
+    {% endfor %}
+  </ul>
+{% endblock content%}
