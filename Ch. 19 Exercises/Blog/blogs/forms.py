@@ -5,7 +5,7 @@ from .models import BlogPost
 class BlogForm(forms.ModelForm):
     """Form to create new blog posts."""
     class Meta:
-        blog = BlogPost
+        model = BlogPost
         fields = ['title', 'text']
         labels = {
             'title': 'Title', 
