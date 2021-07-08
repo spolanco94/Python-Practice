@@ -9,6 +9,7 @@
     <li>
       <h4>{{ blog.title }}, {{ blog.date_added|date:'M d, Y h:i A e'}}</h4>
       <p>{{ blog.text }}</p>
+      <a href="{% url 'blogs:edit_post' blog.id %}">Edit Post</a>
     </li>
     {% empty %}
     <p>Sorry, there have been no blog posts added yet. </p>
