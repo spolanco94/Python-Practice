@@ -25,3 +25,21 @@ def new_post(request):
     # Display a blank or invalid form
     context = {'form': form}
     return render(request, 'blogs/new_post.html', context)
+
+def edit_post(request, blog_id):
+    """Edit a blog post."""
+    post = BlogPost.objects.get(id=blog_id)
+
+    if request.method != 'POST':
+        # Pre-fill with what is saved in the database
+        form = BlogForm(instance=post)
+    else:
+        # Data submitted, validate
+        form = BlogForm(instance= post, data= request.POST)
+        if form.is_valid():
+            form.save()
+            redirect('blogs:index')
+
+    # Show a new edit entry form, or an invalidated form
+    context = {'post': post, 'form': form}
+    return render(request, 'blogs/edit_post.html', context)
