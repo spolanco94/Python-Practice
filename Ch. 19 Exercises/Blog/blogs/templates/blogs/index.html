@@ -1,12 +1,13 @@
 {% extends "blogs/base.html" %}
 
 {% block content %}
+  <a href="{% url 'blogs:new_post' %}">Add a new post</a>
   <br>
   <h3>Blogs:</h3>
   <ul>
     {% for blog in blogs %}
     <li>
-      <h4>{{ blog.title }}</h4>
+      <h4>{{ blog.title }}, {{ blog.date_added|date:'M d, Y h:i A e'}}</h4>
       <p>{{ blog.text }}</p>
     </li>
     {% empty %}
