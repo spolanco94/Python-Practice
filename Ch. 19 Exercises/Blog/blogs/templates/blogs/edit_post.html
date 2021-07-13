@@ -2,7 +2,8 @@
 
 {% block content %}
   <h4>Editing post: {{ blog.title }}</h4>
-  <form action="{% url "blogs:edit_post" blog.id %}">
+
+  <form action="{% url "blogs:edit_post" post.id %}" method='post'>
     {% csrf_token %}
     {{ form.as_p }}
     <button name="submit">Submit</button>
