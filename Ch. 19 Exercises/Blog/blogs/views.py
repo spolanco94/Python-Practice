@@ -29,6 +29,8 @@ def new_post(request):
 def edit_post(request, blog_id):
     """Edit a blog post."""
     post = BlogPost.objects.get(id=blog_id)
+    text = post.text
+    title = post.title
 
     if request.method != 'POST':
         # Pre-fill with what is saved in the database
@@ -38,8 +40,8 @@ def edit_post(request, blog_id):
         form = BlogForm(instance= post, data= request.POST)
         if form.is_valid():
             form.save()
-            redirect('blogs:index')
+            return redirect('blogs:index')
 
     # Show a new edit entry form, or an invalidated form
-    context = {'post': post, 'form': form}
+    context = {'title': title, 'text': text, 'post': post, 'form': form}
     return render(request, 'blogs/edit_post.html', context)
