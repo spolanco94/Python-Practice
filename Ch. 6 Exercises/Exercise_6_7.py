@@ -1,5 +1,5 @@
-##### Beginning with the program from 6-1, add 2 more people with 2 more 
-##### dictionaries. Store all in a list called 'people' and loop through 
+##### Beginning with the program from 6-1, add 2 more people with 2 more
+##### dictionaries. Store all in a list called 'people' and loop through
 ##### printing everything you know about each person
 people = []
 

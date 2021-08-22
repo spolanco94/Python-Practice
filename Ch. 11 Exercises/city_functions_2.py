@@ -1,4 +1,4 @@
-# Write a function that takes in the name of a city, its country and its 
+# Write a function that takes in the name of a city, its country and its
 # population, and formats them as "Santiago, Chile - population 5000000"
 
 def format_city(city, country, population=''):
@@ -6,7 +6,7 @@ def format_city(city, country, population=''):
     if population != '':
         formatted = (f"{city.title()}, {country.title()} - population "
             f"{population}")
-    else: 
+    else:
         formatted = f"{city.title()}, {country.title()}"
 
     return formatted

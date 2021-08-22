@@ -1,4 +1,4 @@
-# Using the class from 9-1, create 3 different instances and call 
+# Using the class from 9-1, create 3 different instances and call
 # 'describe_restaurant' for each instance
 from Restaurant import Restaurant
 

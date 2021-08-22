@@ -1,6 +1,6 @@
-# Write a function called 'describe_city' that accepts the name of a city and 
-# country. Have it print a simple sentence. Give it a default parameter for 
-# the country, and call it for 3 different cities. Choose one city from a 
+# Write a function called 'describe_city' that accepts the name of a city and
+# country. Have it print a simple sentence. Give it a default parameter for
+# the country, and call it for 3 different cities. Choose one city from a
 # different country.
 
 def describe_city(city, country="japan"):

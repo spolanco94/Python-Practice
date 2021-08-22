@@ -1,4 +1,4 @@
-# Write a program prompting users for their favorite number, and save it to a 
+# Write a program prompting users for their favorite number, and save it to a
 # JSON file. Then print a message reading back the stored value.
 import json
 
@@ -10,7 +10,7 @@ def save_favorite_num():
     filename = "favorite_number.json"
     with open(filename, 'w') as f:
         json.dump(favorite_num, f)
-        
+
     return favorite_num
 
 def recall_favorite_num():

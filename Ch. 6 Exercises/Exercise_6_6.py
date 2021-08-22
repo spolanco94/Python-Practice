@@ -1,5 +1,5 @@
 ##### Use the code from 'favorite_languages.py'
-##### Make a list of people who should take the favorite languages poll, using 
+##### Make a list of people who should take the favorite languages poll, using
 ##### some names already in the dictionary and some that are not
 favorite_languages = {
     "jen" : "python",
@@ -10,7 +10,7 @@ favorite_languages = {
 
 should_take_poll = ["jack", "jen", "faruk", "janice", "edward", "sarah"]
 
-##### Loop through the list, and print a message thanking anyone who has taken 
+##### Loop through the list, and print a message thanking anyone who has taken
 ##### it and another message inviting those who haven't to take the poll
 for name in should_take_poll:
     if name not in favorite_languages:

@@ -1,6 +1,6 @@
-# Write a test case for Employee. Write two test methods, 
-# test_give_default_raise() and test_give_custom_raise(). Use the setUp() method 
-# so you don't have to create a new employee instance in each method. 
+# Write a test case for Employee. Write two test methods,
+# test_give_default_raise() and test_give_custom_raise(). Use the setUp() method
+# so you don't have to create a new employee instance in each method.
 import unittest
 from Employee import Employee
 
@@ -9,7 +9,7 @@ class TestEmployee(unittest.TestCase):
 
     def setUp(self) -> None:
         """
-        Create a complete Employee profile with a full name and salary 
+        Create a complete Employee profile with a full name and salary
         information.
         """
         self.new_employee = Employee("rick", "sanchez", 500000)

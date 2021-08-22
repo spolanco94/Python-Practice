@@ -1,5 +1,5 @@
 ##### Make several dictionaries where each represents a different pet.
-##### In each dictionary, include the kind of animal and the owners name. 
+##### In each dictionary, include the kind of animal and the owners name.
 rex = {
     "name" : "rex",
     "owner" : "Alan",

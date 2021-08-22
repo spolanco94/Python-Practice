@@ -1,5 +1,5 @@
 # Write a function that takes in the name of a city and country and formats them
-# as "Santiago, Chile". 
+# as "Santiago, Chile".
 
 def format_city(city, country):
     """Formats a city and country as 'City', 'Country'"""

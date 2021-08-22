@@ -1,5 +1,4 @@
 from django.db import models
-from django.db.models.base import Model
 
 class Pizza(models.Model):
     """A pizza that the user is building."""
@@ -14,7 +13,7 @@ class Topping(models.Model):
     pizza = models.ForeignKey(Pizza, on_delete=models.CASCADE)
     name = models.CharField(max_length=20)
 
-    class Meta: 
+    class Meta:
         verbose_name_plural = "toppings"
 
     def __str__(self) -> str:

@@ -2,7 +2,7 @@
 favorite_numbers = {
     "anna" : 22,
     "jasmine" : 12,
-    "olivia" : 5, 
+    "olivia" : 5,
     "farjan" : 67,
     "tareen" : 102,
 }

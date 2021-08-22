@@ -7,19 +7,19 @@ def my_ticket_gen(my_ticket, guessing_pool):
     my_ticket = []
     while len(my_ticket) < 4:
         my_ticket.append(random.choice(guessing_pool))
-    
+
     return my_ticket
 
 #### Create Winning Ticket
 pool = []
 while len(pool) < 10:
-    n = random.randint(1,100) # Prevent duplicate numbers in pool
+    n = random.randint(1, 100) # Prevent duplicate numbers in pool
     if n not in pool:
         pool.append(n)
 
 while 10 <= len(pool) < 15:
     # Prevent duplicate letters in pool
-    l = random.choice(string.ascii_lowercase) 
+    l = random.choice(string.ascii_lowercase)
     if l not in pool:
         pool.append(l)
 
@@ -51,7 +51,7 @@ while not won:
         won = True
     elif count >= max_tries:
         break
-    
+
     my_ticket = my_ticket_gen(my_ticket, guessing_pool)
 
 if won:

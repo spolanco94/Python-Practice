@@ -11,8 +11,8 @@ print(f"\nInstead, {guests[2]} will be coming in his place.")
 print(f"As for {guests[0]}, {guests[1]}, and  {guests[3]}, I look forward to seeing the rest of you.")
 
 print("\nGreat news! I have found a bigger table with room for more guests!")
-guests.insert(0,"Christopher Nolan")
-guests.insert(2,"Hideo Kojima")
+guests.insert(0, "Christopher Nolan")
+guests.insert(2, "Hideo Kojima")
 guests.append("Paul Thomas Anderson")
 
 print(f"\n{guests[0]}, please join me for the brunch of the century!")

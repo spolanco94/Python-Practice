@@ -23,7 +23,7 @@ def topic(request, topic_id):
 
 def new_topic(request):
     """Create a new topic."""
-    
+
     if request.method != 'POST':
         # No data submitted, create a blank form
         form = TopicForm()
@@ -77,4 +77,3 @@ def edit_entry(request, entry_id):
     # Display a blank or invalid form
     context = {'entry': entry, 'topic': topic, 'form': form}
     return render(request, 'learning_logs/edit_entry.html', context)
-    

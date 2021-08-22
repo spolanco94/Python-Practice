@@ -1,4 +1,4 @@
-# Create an instance of the Restaraunt class. Print the two attributes, then 
+# Create an instance of the Restaraunt class. Print the two attributes, then
 # call each method
 from Restaurant import Restaurant
 

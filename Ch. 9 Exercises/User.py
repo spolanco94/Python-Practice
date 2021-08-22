@@ -1,7 +1,7 @@
-# Create a User class that takes in first_name, last_name, and several other 
-# attributes commonly found in a user profile. Create a method, 'describe_user' 
-# to print a summary of the attributes. Then create a second method, 
-# 'greet_user' to print a personalized greeting to the user. 
+# Create a User class that takes in first_name, last_name, and several other
+# attributes commonly found in a user profile. Create a method, 'describe_user'
+# to print a summary of the attributes. Then create a second method,
+# 'greet_user' to print a personalized greeting to the user.
 
 class User:
     """Creates a user profile class."""

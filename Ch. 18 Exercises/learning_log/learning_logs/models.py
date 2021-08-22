@@ -1,5 +1,4 @@
 from django.db import models
-from django.db.models.fields import DateTimeField
 
 class Topic(models.Model):
     """A topic the user is learning about."""
@@ -7,7 +6,7 @@ class Topic(models.Model):
     date_added = models.DateTimeField(auto_now_add=True)
 
     def __str__(self) -> str:
-        """Return string representation of the model."""        
+        """Return string representation of the model."""
         return self.text
 
 class Entry(models.Model):

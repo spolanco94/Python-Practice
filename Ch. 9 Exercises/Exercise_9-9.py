@@ -1,6 +1,6 @@
-# Using the final version of electric_car.py, add a method to the Battery class 
-# called upgrade_battery(). This method should check the battery size and set 
-# the capacity to 100 if it isn't already. Make an electric car with a default 
+# Using the final version of electric_car.py, add a method to the Battery class
+# called upgrade_battery(). This method should check the battery size and set
+# the capacity to 100 if it isn't already. Make an electric car with a default
 # battery size, call get_range() before and after upgrading the battery.
 from electric_car import ElectricCar
 

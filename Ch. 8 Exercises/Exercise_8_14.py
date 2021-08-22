@@ -1,5 +1,5 @@
-# Write a function storing the info of a car, must include manufacturer and 
-# model, but also take in an arbitrary keyword parameter. Call the function and 
+# Write a function storing the info of a car, must include manufacturer and
+# model, but also take in an arbitrary keyword parameter. Call the function and
 # print out the dictionary
 
 def store_car(manufacturer, model, **car):

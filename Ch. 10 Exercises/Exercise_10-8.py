@@ -1,6 +1,6 @@
 # Make two files, cats.txt and dogs.txt, and store at least 3 kinds of each into
 # each file. Write the code in a try-except block that will catch a FileNotFound
-# error, or print the contents of each file if there are none. 
+# error, or print the contents of each file if there are none.
 
 cats = ["lynx", "sphynx", "persian"]
 dogs = ["shiba", "shih tsu", "miniature pinscher"]

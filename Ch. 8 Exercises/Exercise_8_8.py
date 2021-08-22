@@ -1,9 +1,9 @@
 # Create a while loop that allows users to enter album info. Then call
-# make_album() and print the dictionary created. Include a 'quit' value. 
+# make_album() and print the dictionary created. Include a 'quit' value.
 
 def make_album(title, artist, year, status, songs= None):
     """Creates a dictionary of an album"""
-    
+
     album = {
         "title" : title,
         "artist" : artist,

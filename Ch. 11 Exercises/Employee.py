@@ -1,11 +1,11 @@
-# Write a class, Employee, that takes in a first name, last name, and an annual 
-# salary and stores each of these attributes. Write a method called give_raise() 
-# that adds 5,000 to the annual salary by default, but also accepts a different 
-# amount. 
+# Write a class, Employee, that takes in a first name, last name, and an annual
+# salary and stores each of these attributes. Write a method called give_raise()
+# that adds 5,000 to the annual salary by default, but also accepts a different
+# amount.
 
 class Employee:
     """
-    Creates an employee file storing first and last name, and salary 
+    Creates an employee file storing first and last name, and salary
     information.
     """
 

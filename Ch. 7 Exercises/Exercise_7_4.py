@@ -3,7 +3,7 @@
 # will be added.
 
 # Initialize empty list to track requested toppings, order total to track cost
-# of toppings, and a dictionary of available toppings with their prices. 
+# of toppings, and a dictionary of available toppings with their prices.
 pizza_toppings = []
 order_total = 0.00
 available_toppings = {
@@ -22,18 +22,18 @@ available_toppings = {
 # Print welcome message.
 print("Welcome to pizza world! What kind of pizza can I help you make today?")
 
-# Loop goes on until user enters 'done', other wise they will continually be 
+# Loop goes on until user enters 'done', other wise they will continually be
 #### prompted for more toppings. --- refactor as a separate function
 while True:
     requested_topping = input("Please let me know what toppings you would like. "
     "When you're done, please let me know by entering 'done'. ")
     requested_topping = requested_topping.lower()
-    
+
     # Check if user has input 'done' and break out of loop if true
     if requested_topping == 'done':
         break
     else:
-        # Check if the requested topping is in the dictionary of available 
+        # Check if the requested topping is in the dictionary of available
         # toppings and feedback outcome to user
         print(f"Adding {requested_topping} to your pizza now...")
 
@@ -61,5 +61,5 @@ if verification.lower() == "y":
     print(f"Okay! So your final total will be ${format_final}.\nThank you for "
     "coming to Pizza World. We hope to serve you again soon!")
 else:
-    #### Rewrite to call either add_toppings or remove_toppings functions 
+    #### Rewrite to call either add_toppings or remove_toppings functions
     print("We're sorry to hear that! Please start over again.")
