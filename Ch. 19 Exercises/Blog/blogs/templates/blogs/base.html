@@ -1,4 +1,13 @@
 <a href="{% url 'blogs:index' %}"><h1>The Cool Blog</h1></a>
+{% if user.is_authenticated %}
+  <h3>
+    Hey, {{ user.username }}. 
+    Want to <a href="{% url 'users:logout' %}">Log out</a>?
+  </h3>
+{% else %}
+  <h3>Need to <a href="{% url 'users:login' %}">Log in</a>?</h3>
+  <h3>Or do you need to <a href="{% url 'users:register' %}">Register</a>?</h3>
+{% endif %}
 
 <h2>Where we share only the coolest news around town, man.</h2>
 
