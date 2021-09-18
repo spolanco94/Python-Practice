@@ -10,7 +10,7 @@ def register(request):
         form = UserCreationForm()
     else:
         # Validate submitted form
-        form = UserCreationForm(request.POST)
+        form = UserCreationForm(data=request.POST)
         
         if form.is_valid():
             # Save new user information
@@ -20,4 +20,4 @@ def register(request):
             return redirect('learning_logs:index')
     
     context = {'form': form}
-    return redirect(request, 'learning_logs/register.html', context)
+    return render(request, 'registration/register.html', context)
