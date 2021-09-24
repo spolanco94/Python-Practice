@@ -6,6 +6,11 @@ from django.http.response import Http404
 from .models import Topic, Entry
 from .forms import TopicForm, EntryForm
 
+def check_topic_owner(request, topic):
+    """Checks if the requesting user owns the topic."""
+    if topic.owner != request.user:
+        raise Http404
+
 def index(request):
     """The home page for Learning Log."""
     return render(request, 'learning_logs/index.html')
@@ -22,8 +27,7 @@ def topic(request, topic_id):
     """Display a topic and its entries."""
     topic = Topic.objects.get(id=topic_id)
     # Match requesting user against topic owner
-    if topic.owner != request.user:
-        raise Http404
+    check_topic_owner(request, topic)
     
     entries = topic.entry_set.order_by('-date_added')
     context = {'topic': topic, 'entries': entries}
@@ -54,7 +58,8 @@ def new_entry(request, topic_id):
     """Create a new entry for a topic."""
 
     topic = Topic.objects.get(id=topic_id)
-
+    check_topic_owner(request, topic)
+    
     if request.method != "POST":
         # No data submitted, create a blank form
         form = EntryForm()
@@ -76,8 +81,7 @@ def edit_entry(request, entry_id):
     """Edit an existing entry for a topic."""
     entry = Entry.objects.get(id=entry_id)
     topic = entry.topic
-    if topic.owner != request.user:
-        raise Http404
+    check_topic_owner(request, topic)
 
     if request.method != "POST":
         # Generate a form pre-filled with the existing entry
