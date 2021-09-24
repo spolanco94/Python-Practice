@@ -9,6 +9,8 @@ app_name = 'blogs'
 urlpatterns = [
     # Home page
     path('', views.index, name='index'),
+    # Blogs
+    path('blogs/', views.blogs, name='blogs'),
     # Create a new blog post
     path('new_post', views.new_post, name='new_post'),
     # Edit blog posts

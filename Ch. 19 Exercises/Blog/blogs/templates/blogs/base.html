@@ -1,4 +1,8 @@
-<a href="{% url 'blogs:index' %}"><h1>The Cool Blog</h1></a>
+<h2>
+  <a href="{% url 'blogs:index' %}">The Cool Blog</a> - 
+  <a href="{% url 'blogs:blogs' %}">Forum</a>
+</h2>
+
 {% if user.is_authenticated %}
   <h3>
     Hey, {{ user.username }}. 
@@ -8,7 +12,5 @@
   <h3>Need to <a href="{% url 'users:login' %}">Log in</a>?</h3>
   <h3>Or do you need to <a href="{% url 'users:register' %}">Register</a>?</h3>
 {% endif %}
-
-<h2>Where we share only the coolest news around town, man.</h2>
 
 {% block content %}{% endblock content %}
