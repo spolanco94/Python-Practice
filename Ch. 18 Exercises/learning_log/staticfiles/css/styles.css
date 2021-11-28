@@ -1,0 +1,9 @@
+.center-form {
+    max-width: 420px;
+    padding: 20px;
+    margin: auto;
+}
+
+.topics-list {
+    list-style: none;
+}
