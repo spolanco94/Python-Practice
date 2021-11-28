@@ -1,5 +1,7 @@
+{% load bootstrap4 %}
+{% load static %}
 <h2>
-  <a href="{% url 'blogs:index' %}">The Cool Blog</a> - 
+  {% comment %} <a href="{% url 'blogs:index' %}">The Cool Blog</a> -  {% endcomment %}
   <a href="{% url 'blogs:blogs' %}">Forum</a>
 </h2>
 
@@ -13,4 +15,51 @@
   <h3>Or do you need to <a href="{% url 'users:register' %}">Register</a>?</h3>
 {% endif %}
 
-{% block content %}{% endblock content %}
+
+<!doctype html>
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, 
+    shrink-to-fit=no">
+
+    <title>The Cool Blog</title>
+    
+    <meta name="description" content="The coolest blog on the interwebs.">
+
+    {% bootstrap_css %}
+    {% bootstrap_javascript jquery='full' %}
+
+  </head>
+
+  <body>
+    <header class="blog-header py-3">
+      <div class="row flex-nowrap justify-content-between align-items-center">
+        <div class="col-4 pt-1"></div>
+        <div class="col-4 text-center">
+          <a class="blog-header-logo text-dark logo-lg" href="{% url 'blogs:index' %}">
+            The Cool Blog</a>
+        </div>
+      </div>
+    </header>
+    <div class="nav-scroller py-1 mb-2">
+      <nav class="nav d-flex justify-content-between">
+        <a class="p-2 text-muted" href="#">Cool</a>
+        <a class="p-2 text-muted" href="#">Cooler</a>
+        <a class="p-2 text-muted" href="#">Coolest</a>
+      </nav>
+    </div>
+
+    <main role="main" class="container">
+      <div class="pb-2 mb-2 border-bottom">
+        {% block page_header %}{% endblock page_header %}
+      </div>
+      <div>
+        {% block content %}{% endblock content %}
+      </div>
+    </main>
+
+  </body>
+
+</html>
