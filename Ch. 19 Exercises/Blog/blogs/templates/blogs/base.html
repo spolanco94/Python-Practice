@@ -1,65 +1,64 @@
 {% load bootstrap4 %}
 {% load static %}
-<h2>
-  {% comment %} <a href="{% url 'blogs:index' %}">The Cool Blog</a> -  {% endcomment %}
-  <a href="{% url 'blogs:blogs' %}">Forum</a>
-</h2>
-
-{% if user.is_authenticated %}
-  <h3>
-    Hey, {{ user.username }}. 
-    Want to <a href="{% url 'users:logout' %}">Log out</a>?
-  </h3>
-{% else %}
-  <h3>Need to <a href="{% url 'users:login' %}">Log in</a>?</h3>
-  <h3>Or do you need to <a href="{% url 'users:register' %}">Register</a>?</h3>
-{% endif %}
-
 
 <!doctype html>
+  <html lang="en">
+    <head>
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1, 
+      shrink-to-fit=no">
 
-<html lang="en">
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, 
-    shrink-to-fit=no">
+      <title>The Cool Blog</title>
+      
+      <meta name="description" content="The coolest blog on the interwebs.">
 
-    <title>The Cool Blog</title>
-    
-    <meta name="description" content="The coolest blog on the interwebs.">
+      {% bootstrap_css %}
+      {% bootstrap_javascript jquery='full' %}
+      <link rel="stylesheet" href="{% static 'css/styles.css' %}">
+    </head>
 
-    {% bootstrap_css %}
-    {% bootstrap_javascript jquery='full' %}
-
-  </head>
-
-  <body>
-    <header class="blog-header py-3">
-      <div class="row flex-nowrap justify-content-between align-items-center">
-        <div class="col-4 pt-1"></div>
-        <div class="col-4 text-center">
-          <a class="blog-header-logo text-dark logo-lg" href="{% url 'blogs:index' %}">
-            The Cool Blog</a>
+    <body>
+      <div class="container">
+        <header class="blog-header py-3">
+          <div class="row flex-nowrap justify-content-between align-items-center">
+            {% comment %} <div class="col-4 pt-1"></div> {% endcomment %}
+            <div class="col-4 pt-1">
+              <a class="blog-header-logo text-muted font-italic logo-lg" 
+                href="{% url 'blogs:index' %}">
+                The Cool Blog</a>
+            </div>
+            <div class="col-4 d-flex justify-content-end align-items-center">
+              {% if user.is_authenticated %}
+                <p class="text-muted mr-2 mt-3">Hey, {{ user.username }}.</p> 
+                <a class="btn btn-sm btn-outline-danger" 
+                  href="{% url 'users:logout' %}">Log out</a>
+              {% else %}
+                <a class="btn btn-sm btn-outline-primary mr-2" 
+                  href="{% url 'users:login' %}">Log in</a>
+                <a class="btn btn-sm btn-outline-secondary" 
+                  href="{% url 'users:register' %}">Register</a>
+              {% endif %}
+            </div>
+          </div>
+        </header>
+        <div class="nav-scroller py-1 mb-2">
+          <nav class="nav d-flex justify-content-between">
+            <a class="p-2 text-muted" href="#">Cool</a>
+            <a class="p-2 text-muted" href="#">Cooler</a>
+            <a class="p-2 text-muted" href="#">Coolest</a>
+          </nav>
         </div>
       </div>
-    </header>
-    <div class="nav-scroller py-1 mb-2">
-      <nav class="nav d-flex justify-content-between">
-        <a class="p-2 text-muted" href="#">Cool</a>
-        <a class="p-2 text-muted" href="#">Cooler</a>
-        <a class="p-2 text-muted" href="#">Coolest</a>
-      </nav>
-    </div>
 
-    <main role="main" class="container">
-      <div class="pb-2 mb-2 border-bottom">
-        {% block page_header %}{% endblock page_header %}
-      </div>
-      <div>
-        {% block content %}{% endblock content %}
-      </div>
-    </main>
+      <main role="main" class="container">
+        <div class="pb-2 mb-2 border-bottom">
+          {% block page_header %}{% endblock page_header %}
+        </div>
+        <div>
+          {% block content %}{% endblock content %}
+        </div>
+      </main>
 
-  </body>
+    </body>
 
-</html>
+  </html>

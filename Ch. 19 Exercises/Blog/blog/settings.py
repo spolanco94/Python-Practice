@@ -135,3 +135,14 @@ STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 LOGIN_URL = 'users:login'
+
+# #DatabaseCache
+# CACHES = {
+#     'default': {
+#         'BACKEND': 'django.core.cache.backends.db.DatabaseCache',
+#         'LOCATION': 'blogs_cache',
+#     }
+# }
+
+# #Session Settings
+# SESSION_EXPIRE_AT_BROWSER_CLOSE = True
