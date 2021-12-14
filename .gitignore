@@ -130,3 +130,5 @@ dmypy.json
 .pyre/
 eggs.py
 test.py
+
+/Ch.\ 19\ Exercises/Blog/blog/settings.py
