@@ -1,11 +1,20 @@
 {% extends 'blogs/base.html' %}
+{% load bootstrap4 %}
+
+{% block page_header %}
+  <h3 class="display-4 center-form text-center text-muted">Register</h3>
+{% endblock page_header %}
 
 {% block content %}
-  <form action="{% url 'users:register' %}" method="post">
+  <form action="{% url 'users:register' %}" method="post" class="form center-form">
     {% csrf_token %}
-    {{ form.as_p }}
+    {% bootstrap_form form %}
 
-    <button name="submit">Submit</button>
+    <div class="form-actions text-center">
+      {% buttons %}
+        <button name="submit" class="btn btn-primary">Submit</button>
+      {% endbuttons %}
+    </div>
     <input type="hidden" name="next" value="{% url 'blogs:index' %}">
   </form>
 {% endblock content %} 

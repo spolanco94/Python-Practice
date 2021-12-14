@@ -1,12 +1,18 @@
 {% extends 'blogs/base.html' %}
+{% load bootstrap4 %}
+
+{% block page_header %}
+  <h3 class="display-4">Editing post: {{ blog.title }}</h3>
+{% endblock page_header %}
 
 {% block content %}
-  <h4>Editing post: {{ blog.title }}</h4>
-
-  <form action="{% url "blogs:edit_post" post.id %}" method='post'>
+  <form class="form" action="{% url "blogs:edit_post" post.id %}" method='post'>
     {% csrf_token %}
-    {{ form.as_p }}
-    <button name="submit">Submit</button>
+    {% bootstrap_form form %}
+    
+    {% buttons %}
+      <button name="submit" class="btn btn-primary">Submit</button>
+    {% endbuttons %}
   </form>
 
 {% endblock content %}

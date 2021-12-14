@@ -1,34 +1,57 @@
 {% extends "blogs/base.html" %}
 
-{% block page_header %}
-  <div class="jumbotron p-4 p-md-5 text-white rounded bg-dark">
-    <h4 class="display-4 ">
-      Where we share only the coolest news around town, man.
-    </h4> 
+{% block jumbotron %}
+  <div class="jumbotron p-4 p-md-5 text-white rounded cool-bg">
+    <div>
+      <h4 class="display-4 banner">
+        Home of the coolest news around town, man.
+      </h4> 
+    </div>
   </div>
-{% endblock page_header %}
+{% endblock jumbotron %}
 
 {% block content %}
   {% if user.is_authenticated %}
-    <a href="{% url 'blogs:new_post' %}">Add a new post</a>
+  <div class="mt-3 mb-3">
+    <a class="btn btn-primary btn-sm" 
+      href="{% url 'blogs:new_post' %}">Add a new post</a>
+  </div>
   {% endif %}
-
-  <br>
   
-  <h3>Blogs:</h3>
-  <ul>
-    {% for blog in blogs %}
-    <li>
-      <h4>{{ blog.title }}, {{ blog.date_added|date:'M d, Y h:i A e'}}</h4>
-      <p>{{ blog.text[0:50]... }}</p>
-      {% comment %} <a href="{% url 'blogs:' %}"></a> {% endcomment %}
-      {% if blog.owner == user %}
-        <a href="{% url 'blogs:edit_post' blog.id %}">Edit Post</a>
-      {% endif %}
-    </li>
+  <h4 class="display-4" id="coolin">What's Coolin'</h4>
+  <dl>
+    {% for blog in blogs|slice:'0:9' %}
+      <dd>
+        <dt>{{ blog.title }}, {{ blog.date_added|date:'M d, Y h:i A e'}}</dt>
+        <dd class="lead">{{ blog.text|slice:'0:100' }}...</dd>
+        <a class="btn btn-outline-primary btn-sm" href="{% url 'blogs:blog_post' blog.id %}">Read More</a>
+        
+        <hr>
+      </dd>
     {% empty %}
-    <p>Sorry, there have been no blog posts added yet. </p>
+      <p class="lead">Sorry, there have been no blog posts added yet. </p>
     {% endfor %}
-  </ul>
+  </dl>
+
+  <div class="container p-3 m-auto text-center">
+    <span class="current">
+      <p>Page {{ blogs.number }} of {{ blogs.paginator.num_pages }}</p>
+    </span>
+    <nav class="blog-pagination">
+      <span class="step-links">
+        {% if blogs.has_previous %}
+          <a class="btn btn-outline-info" href="?page=1">&laquo; First</a>
+          <a class="btn btn-outline-info" href="?page={{ blogs.previous_page_number }}">Newer</a>
+        {% endif %}
+        
+
+        {% if blogs.has_next %}
+          <a class="btn btn-outline-info" href="?page={{ blogs.next_page_number }}">Older</a>
+          <a class="btn btn-outline-info" href="?page={{ blogs.paginator.num_pages }}">Last &raquo;</a>
+        {% endif %}
+      </span>
+    </nav>
+
+  </div>
 
 {% endblock content %}

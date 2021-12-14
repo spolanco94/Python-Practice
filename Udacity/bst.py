@@ -19,7 +19,6 @@ class BST(object):
         return self.preorder_print(self.root,"")[1:]
     
     def helper_search(self, start, find_val):
-        print(type(self.right))
         if start.value == find_val:
             return True
         else:
@@ -34,16 +33,16 @@ class BST(object):
     
     def helper_insert(self, start, new_val):
         if self.search(new_val):
-            print("Value already exists in tree.")
+            print(f"Value {new_val} already exists in tree.")
         else:
             if start.value > new_val:
                 if not start.left:
-                    start.left = new_val
+                    start.left = Node(new_val)
                 else:
                     self.helper_insert(start.left, new_val)
             else:
                 if not start.right:
-                    start.right = new_val
+                    start.right = Node(new_val)
                 else:
                     self.helper_insert(start.right, new_val)
 
@@ -54,7 +53,7 @@ class BST(object):
             traversal = self.preorder_print(start.left, traversal)
         if start.right:
             traversal = self.preorder_print(start.right, traversal)
-
+            
         return traversal
     
 
@@ -68,6 +67,7 @@ tree.insert(2)
 tree.insert(1)
 tree.insert(3)
 tree.insert(5)
+tree.insert(3)
 
 
 # Check search

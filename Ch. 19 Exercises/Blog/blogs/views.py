@@ -3,7 +3,7 @@ import blogs
 from django.shortcuts import render, redirect
 from django.contrib.auth.decorators import login_required
 from django.http import Http404
-
+from django.core.paginator import Paginator
 from .models import BlogPost
 from .forms import BlogForm
 
@@ -14,14 +14,18 @@ def check_post_owner(request, post):
 
 def index(request):
     """Home page listing the blogs in chronological order."""
-    return render(request, 'blogs/index.html')
+    blogs = BlogPost.objects.all().order_by('-date_added')
+    paginator = Paginator(blogs, 5)
+    page_number = request.GET.get('page')
+    page_obj = paginator.get_page(page_number)
+    context = {'blogs': page_obj}
+    return render(request, 'blogs/index.html', context)
 
-@login_required
-def blogs(request):
-    """Displays a list of blogposts."""
-    blogs = BlogPost.objects.order_by('date_added')
-    context = {'blogs': blogs}
-    return render(request, 'blogs/blogs.html', context)
+def blog_post(request, post_id):
+    """Displays individual blog post."""
+    blog = BlogPost.objects.get(id=post_id)
+    context = {'blog': blog}
+    return render(request, 'blogs/blog_post.html', context)
 
 @login_required
 def new_post(request):
@@ -33,7 +37,9 @@ def new_post(request):
         # Data submitted, process and save if valid
         form = BlogForm(data=request.POST)
         if form.is_valid():
-            form.save()
+            new_post = form.save(commit=False)
+            new_post.owner = request.user
+            new_post.save()
             return redirect('blogs:index')
 
     # Display a blank or invalid form
@@ -56,7 +62,7 @@ def edit_post(request, blog_id):
         form = BlogForm(instance= post, data= request.POST)
         if form.is_valid():
             form.save()
-            return redirect('blogs:index')
+            return redirect('blogs:blog_post', post_id=post.id)
 
     # Show a new edit entry form, or an invalidated form
     context = {'title': title, 'text': text, 'post': post, 'form': form}
